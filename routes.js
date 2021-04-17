@@ -1,5 +1,5 @@
-var express = require('express'), //get dependencies
-    router = express.Router(),
+const express = require('express'); //get dependencies
+const router = express.Router();
 
 const Music = require ('../models/music');
 
@@ -9,6 +9,7 @@ router.get('/', async (req, res) =>{
     
     res.render('index', {
         music
+});
 });
 
 //Create music from data
