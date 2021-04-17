@@ -1,7 +1,6 @@
 {
-  "name": "CA2_2017300",
-  "version": "1.0.0",
-  "description": "",
+  "name": "ca2_2017300",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,18 +11,23 @@
     "url": "git+https://github.com/wkjess/CA2_2017300.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kim Jang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wkjess/CA2_2017300/issues"
   },
   "homepage": "https://github.com/wkjess/CA2_2017300#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.4"
+    "http": "0.0.1-security",
+    "mongoose": "^5.12.4",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7"
-  }
+  },
+  "description": ""
 }

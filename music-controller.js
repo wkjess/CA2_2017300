@@ -1,4 +1,4 @@
-var Monster = require("./models/music.js")
+var Music = require("./models/music.js")
 
 //create a new music in the database
 exports.createMusic = function(req, res) { 
@@ -7,7 +7,7 @@ exports.createMusic = function(req, res) {
         if (err) { 
             res.status(400).json(err);
         }
-
+        
         res.json(user); 
 });
 };

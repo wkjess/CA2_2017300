@@ -6,15 +6,20 @@ bodyParser = require('body-parser'),
 mongoose = require('mongoose'),
 dotenv = require('dotenv');
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Connected to database'))
+const dbURI = process.env.DB_URL;
 
-var app = express();
-var port = 8000;
-dotenv.config();
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => console.log('Connected to database'))
+    .catch((err) => console.log(err)); 
 
-const musicRouter = require('./routes/music')
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(_dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.listen(3000, () => console.log('Server started'))
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+app.use('/', indexRoutes);
+
+app.listen(app.get ('port'), ()=>{
+    console.log(`Server started on port${app.get('port')}`);
+});
