@@ -1,8 +1,9 @@
-const http = require('http');
+//const http = require('http');
+const path = require('path');
 const logger = require('morgan');
-const cors = require('cors');
+//const cors = require('cors');
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
