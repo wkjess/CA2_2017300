@@ -13,15 +13,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => console.log('Connected to database'))
     .catch((err) => console.log(err)); 
 
-const indexRoutes = require('./routes/index');
+//const indexRoutes = require('./routes/index');
 
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(_dirname, 'views'));
-app.set('view engine', 'ejs');
+var app = express();
+var port = process.env.PORT || 8000;
+dotenv.config();
 
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
-app.use('/', indexRoutes);
+//app.use(morgan('dev'));
+//app.use(express.urlencoded({extended: false}));
+app.use(require('./routes'));
 
 app.listen(app.get ('port'), ()=>{
     console.log(`Server started on port${app.get('port')}`);
